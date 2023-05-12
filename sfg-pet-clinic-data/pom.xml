@@ -4,12 +4,12 @@
   <parent>
     <artifactId>sfg-pet-clinic</artifactId>
     <groupId>com.alexquazar</groupId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
   </parent>
 
   <groupId>com.alexquazar</groupId>
   <artifactId>sfg-pet-clinic-data</artifactId>
-  <version>1.0</version>
+  <version>0.0.2-SNAPSHOT</version>
 
   <properties>
     <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
