@@ -1,2 +1,14 @@
+
 gitConfig:
   alias.hist: "log --all --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'"
+vscode:
+  extensions:
+    - pivotal.vscode-boot-dev-pack
+    - pivotal.vscode-spring-boot
+    - redhat.java
+    - vscjava.vscode-java-debug
+    - vscjava.vscode-java-dependency
+    - vscjava.vscode-java-pack
+    - vscjava.vscode-java-test
+    - vscjava.vscode-maven
+    - vscjava.vscode-spring-initializr
