@@ -3,9 +3,9 @@ package com.alexquazar.sfgpetclinic.services.map;
 import java.util.Set;
 
 import com.alexquazar.sfgpetclinic.model.Pet;
-import com.alexquazar.sfgpetclinic.services.CrudService;
+import com.alexquazar.sfgpetclinic.services.PetService;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
     public void delete(Pet object) {
