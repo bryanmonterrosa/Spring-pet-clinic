@@ -6,7 +6,9 @@ This is dedicated to the customized Spring Framework Pet Clinic project created 
 - URL: https://www.udemy.com/course/spring-framework-5-beginner-to-guru/
 
 ---
- ## For Gitpod:
+<br/>
+
+ # For Gitpod:
 
 As of May 10 2023: Some extensions need to be on a specific version for some extensions to work properly while developing/debugging the application:
 
@@ -17,3 +19,9 @@ As of May 10 2023: Some extensions need to be on a specific version for some ext
 
 2. Project Manager for Java
 - Project Manager for Java: v0.21.2 
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/bryanmonterrosa/Spring-pet-clinic)
+
+## Run:
+Run the main() method at:
+- pet-clinic-web/src/main/java/com/alexquazar/sfgpetclinic/SfgPetClinicApplication.java
