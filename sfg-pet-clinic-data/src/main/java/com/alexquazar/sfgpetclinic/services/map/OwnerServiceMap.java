@@ -5,10 +5,21 @@ import java.util.Set;
 import org.springframework.stereotype.Service;
 
 import com.alexquazar.sfgpetclinic.model.Owner;
+import com.alexquazar.sfgpetclinic.model.Pet;
 import com.alexquazar.sfgpetclinic.services.OwnerService;
+import com.alexquazar.sfgpetclinic.services.PetService;
+import com.alexquazar.sfgpetclinic.services.PetTypeService;
 
 @Service
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService{
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+
+    private final PetTypeService petTypeService;
+    private final PetService petService;
+
+    public OwnerServiceMap(PetTypeService petTypeService, PetService petService) {
+        this.petTypeService = petTypeService;
+        this.petService = petService;
+    }
 
     @Override
     public void delete(Owner object) {
@@ -16,7 +27,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public  void deleteById(Long id) {
+    public void deleteById(Long id) {
         super.deleteById(id);
     }
 
@@ -32,12 +43,34 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner save(Owner object) {
-        return super.save(object);
+
+        if (object != null) {
+            if (object.getPets() != null) {
+                // This is in order to get an ID added to the pet.
+                object.getPets().forEach(pet -> {
+                    if (pet.getPetType() != null) {
+                        pet.setPetType(petTypeService.save(pet.getPetType()));
+                    } else {
+                        throw new RuntimeException("Pet Type is required");
+                    }
+
+                    if (pet.getId() == null) {
+                        Pet savedPet = petService.save(pet);
+                        pet.setId(savedPet.getId());
+                    }
+                });
+            }
+
+            return super.save(object);
+        } else {
+
+            return super.save(object);
+        }
     }
-    
+
     @Override
-    public Owner findByLastName(String lastName){
+    public Owner findByLastName(String lastName) {
         return null;
     }
-    
+
 }
