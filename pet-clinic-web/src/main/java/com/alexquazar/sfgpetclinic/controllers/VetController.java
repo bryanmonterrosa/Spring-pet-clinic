@@ -2,7 +2,7 @@ package com.alexquazar.sfgpetclinic.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.alexquazar.sfgpetclinic.services.VetService;
 
@@ -15,7 +15,7 @@ public class VetController {
         this.vetService = vetService;
     }
 
-    @RequestMapping({ "/vets", "/vets/index", "/vets/index.html" })
+    @GetMapping({ "/vets", "/vets.html", "/vets/index", "/vets/index.html" })
     public String listVets(Model model) {
         model.addAttribute("vets", vetService.findAll());
         return "vets/index";
