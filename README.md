@@ -23,5 +23,6 @@ As of May 10 2023: Some extensions need to be on a specific version for some ext
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/bryanmonterrosa/Spring-pet-clinic)
 
 ## Run:
-Run the main() method at:
-- pet-clinic-web/src/main/java/com/alexquazar/sfgpetclinic/SfgPetClinicApplication.java
+```
+./mvnw spring-boot:run
+```
