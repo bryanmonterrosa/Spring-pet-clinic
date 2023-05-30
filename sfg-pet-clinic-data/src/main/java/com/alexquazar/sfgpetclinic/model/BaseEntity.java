@@ -2,8 +2,16 @@ package com.alexquazar.sfgpetclinic.model;
 
 import java.io.Serializable;
 
-public class BaseEntity implements Serializable{
-    
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public class BaseEntity implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     public Long getId() {
@@ -14,5 +22,4 @@ public class BaseEntity implements Serializable{
         this.id = id;
     }
 
-    
 }
