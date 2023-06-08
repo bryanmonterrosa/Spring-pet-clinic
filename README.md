@@ -1,4 +1,6 @@
-# Spring-pet-clinic
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/bryanmonterrosa/Spring-pet-clinic/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/bryanmonterrosa/Spring-pet-clinic/tree/main)
+
+# Spring-pet-clinic 
 
 This is dedicated to the customized Spring Framework Pet Clinic project created step by step from this Udemy course:
 
