@@ -19,4 +19,3 @@ vscode:
     - vscjava.vscode-java-test
     - vscjava.vscode-maven
     - vscjava.vscode-spring-initializr
-    - gabrielbb.vscode-lombok

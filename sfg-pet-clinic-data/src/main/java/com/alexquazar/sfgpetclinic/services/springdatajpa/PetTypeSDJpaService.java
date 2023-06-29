@@ -21,16 +21,6 @@ public class PetTypeSDJpaService implements PetTypeService {
     }
 
     @Override
-    public void delete(PetType object) {
-        petTypeRepository.delete(object);
-    }
-
-    @Override
-    public void deleteById(Long id) {
-        petTypeRepository.deleteById(id);
-    }
-
-    @Override
     public Set<PetType> findAll() {
         Set<PetType> petTypes = new HashSet<>();
         petTypeRepository.findAll().forEach(petTypes::add);
@@ -38,8 +28,8 @@ public class PetTypeSDJpaService implements PetTypeService {
     }
 
     @Override
-    public PetType findById(Long id) {
-        return petTypeRepository.findById(id).orElse(null);
+    public PetType findById(Long aLong) {
+        return petTypeRepository.findById(aLong).orElse(null);
     }
 
     @Override
@@ -47,4 +37,13 @@ public class PetTypeSDJpaService implements PetTypeService {
         return petTypeRepository.save(object);
     }
 
+    @Override
+    public void delete(PetType object) {
+        petTypeRepository.delete(object);
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+        petTypeRepository.deleteById(aLong);
+    }
 }
