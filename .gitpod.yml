@@ -6,7 +6,8 @@ tasks:
     command: |
       sdk default java 17.0.7.fx-zulu
       # ./mvnw clean install -U -DskipTests
-      # ./mvnw spring-boot:run
+      # cd pet-clinic-web
+      # mvn spring-boot:run
 
 vscode:
   extensions:
