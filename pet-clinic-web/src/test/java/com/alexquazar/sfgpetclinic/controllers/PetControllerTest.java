@@ -47,11 +47,13 @@ public class PetControllerTest {
     MockMvc mockMvc;
 
     Owner owner;
+    Pet pet;
     Set<PetType> petTypes;
 
     @BeforeEach
     void setUp() {
         owner = Owner.builder().id(1l).build();
+        pet = Pet.builder().id(1l).name("name").build();
 
         petTypes = new HashSet<>();
         petTypes.add(PetType.builder().id(1l).name("Dog").build());
@@ -108,8 +110,9 @@ public class PetControllerTest {
     void processUpdateForm() throws Exception{
         when(ownerService.findById(anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
+        when(petService.findById(anyLong())).thenReturn(Pet.builder().id(1l).name("name").build());
 
-        mockMvc.perform(post("/owners/1/pets/2/edit"))
+        mockMvc.perform(post("/owners/1/pets/2/edit").flashAttr("pet",pet ))
             .andExpect(status().is3xxRedirection())
             .andExpect(view().name("redirect:/owners/1"));
 
